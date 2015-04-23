@@ -254,6 +254,9 @@ header .intro-text .intro-heading {
   text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
 }
 @media (min-width: 768px) {
+  header {
+    min-height: 600px;
+  }
   header .intro-text {
     padding-top: 240px;
     padding-bottom: 200px;
@@ -272,6 +275,12 @@ header .intro-text .intro-heading {
     margin-bottom: 50px;
     text-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
   }
+}
+option {
+  padding: 6px;
+}
+optgroup {
+  margin: 25px;
 }
 section {
   padding: 90px 0;
