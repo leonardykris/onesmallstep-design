@@ -1,5 +1,6 @@
 @import "variables.less";
 @import "mixins.less";
+@import "style.less";
 
 // Global Components
 
@@ -51,6 +52,10 @@ h1, h2, h3, h4, h5, h6 {
 
 .img-centered {
 	margin: 0 auto;
+}
+
+.mt {
+	margin-top: 40px;
 }
 
 .bg-light-gray {
@@ -137,7 +142,7 @@ h1, h2, h3, h4, h5, h6 {
 @media(min-width:768px) {
     .navbar-default {
     	background-color: transparent;
-        padding: 25px 0;
+        padding: 24px 0;
         -webkit-transition: padding 0.3s;
         -moz-transition: padding 0.3s;
         transition: padding 0.3s;
@@ -147,22 +152,33 @@ h1, h2, h3, h4, h5, h6 {
 	        -webkit-transition: all 0.3s;
 	        -moz-transition: all 0.3s;
 	        transition: all 0.3s;
+	        width: 240px;
+			background-image: url(../img/logos/onesmallstep-03.png);
+			background-size: 100%;
+			background-repeat: no-repeat;
+			text-indent: -9999px;
 	    }
 		.navbar-nav>.active>a {
 			border-radius: 3px;
 		}
     }
     .navbar-default.navbar-shrink {
-    	background-color: @gray-darkest;
+    	background-color: white;
         padding: 10px 0;
 		.navbar-brand {
 	        font-size: 1.5em;
+	        background-image: url(../img/logos/onesmallstep-02.png);
 	    }    
 	}
 }
 
 header {
-	background-image: url('../img/header-bg.jpg');
+	background-image: 
+		linear-gradient(
+	      rgba(0, 0, 0, 0.5),
+	      rgba(0, 0, 0, 0.5)
+	    ),
+	    url('../img/cover/LadyHacks_2014_corinne_2.jpg');
 	background-repeat: none;
 	background-attachment: scroll;
 	background-position: center center;
@@ -170,21 +186,22 @@ header {
 	text-align: center;
 	color: white;
 	.intro-text {
-		padding-top: 100px;
+		padding-top: 80px;
 		padding-bottom: 50px;
 		.intro-lead-in {
 			.serif-font;
-			font-style: italic;
-			font-size: 22px;
+			font-weight: 700;
+			text-transform: uppercase;
+			font-size: 3em;
 			line-height: 22px;
 			margin-bottom: 25px;
+			text-shadow: 0 1px 4px rgba(0,0,0,0.4);
 		}
 		.intro-heading {
 			.heading-font;
-			font-weight: 700;
-			font-size: 50px;
-			line-height: 50px;
+			font-size: 2em;
 			margin-bottom: 25px;
+			text-shadow: 0 1px 4px rgba(0,0,0,0.4);
 		}
 	}
 }
@@ -192,21 +209,21 @@ header {
 @media(min-width:768px) {
 	header {
 		.intro-text {
-			padding-top: 300px;
+			padding-top: 240px;
 			padding-bottom: 200px;
 			.intro-lead-in {
 				.serif-font;
-				font-style: italic;
-				font-size: 40px;
+				font-weight: 700;
+				font-size: 2.75em;
 				line-height: 40px;
 				margin-bottom: 25px;
+				text-shadow: 0 1px 4px rgba(0,0,0,0.4);
 			}
 			.intro-heading {
 				.heading-font;
-				font-weight: 700;
-				font-size: 75px;
-				line-height: 75px;
+				font-size: 1.7em;
 				margin-bottom: 50px;
+				text-shadow: 0 1px 4px rgba(0,0,0,0.2);
 			}
 		}
 	}
@@ -215,7 +232,7 @@ header {
 // Global Section Styles
 
 section {
-    padding: 100px 0;
+    padding: 90px 0;
     h2.section-heading {
 		font-size: 40px;
 		margin-top: 0;
@@ -233,7 +250,7 @@ section {
 
 @media(min-width:768px) {
 	section {
-		padding: 150px 0;
+		padding: 90px 0;
 	}
 }
 
@@ -242,6 +259,32 @@ section {
 .service-heading {
 	margin: 15px 0;
 	text-transform: none;
+}
+
+// Quote Section
+
+#quote {
+	background-image:
+		linear-gradient(
+	      rgba(0, 0, 0, 0.7),
+	      rgba(0, 0, 0, 0.7)
+	    ),
+	    url('../img/cover/WiT_1_JohnKraus_2.jpg');
+	background-size: cover;
+	text-align: center;
+	color: white;
+
+	h1 {
+		font-size: 2.5em;
+	}
+
+	p {
+		font-size: 1.125em;
+	}
+}
+
+#green {
+	min-height: 420px;
 }
 
 // Portfolio Section
@@ -523,8 +566,10 @@ section {
 
 aside.clients {
 	img {
-		margin: 50px auto;
+		margin: 20px auto;
+		max-height: 80px;
 	}
+
 }
 
 // Contact Section
@@ -582,10 +627,10 @@ section#contact {
 // Footer
 
 footer {
-	padding: 25px 0;
-	text-align: center;
+	padding: 25px 0px 40px 0px;
+	// text-align: center;
 	span.copyright {
-		line-height: 40px;
+		// line-height: 40px;
 		.heading-font;
 		text-transform: none;
 	}
@@ -601,12 +646,13 @@ footer {
 
 ul.social-buttons {
 	margin-bottom: 0;
+	text-align: center;
 	li {
 		a {
 			display: block;
 			background-color: @gray-darkest;
-			height: 40px;
-			width: 40px;
+			height: 36px;
+			width: 36px;
 			border-radius: 100%;
 			font-size: 20px;
 			line-height: 40px;
@@ -615,6 +661,7 @@ ul.social-buttons {
 	        -webkit-transition: all 0.3s;
 	        -moz-transition: all 0.3s;
 	        transition: all 0.3s;
+	        margin-bottom: 10px;
 	        &:hover,
 	        &:focus,
 	        &:active {
