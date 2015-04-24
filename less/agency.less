@@ -7,6 +7,8 @@
 body {
 	overflow-x: hidden;
 	.body-font;
+	-webkit-font-smoothing: subpixel-antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
 .text-muted {
@@ -47,7 +49,6 @@ a.active {
 
 h1, h2, h3, h4, h5, h6 {
 	.heading-font;
-	font-weight: 700;
 }
 
 .img-centered {
@@ -171,28 +172,27 @@ h1, h2, h3, h4, h5, h6 {
 	    }    
 	}
 }
+@winheight:`$(window).height()`;
 
 header {
 	background-image: 
-		linear-gradient(
-	      rgba(0, 0, 0, 0.5),
-	      rgba(0, 0, 0, 0.5)
-	    ),
-	    url('../img/cover/LadyHacks_2014_corinne_2.jpg');
+	    url('../img/cover/stardust-01.png');
+	    background-size: cover;
 	background-repeat: none;
 	background-attachment: scroll;
 	background-position: center center;
 	.background-cover;
 	text-align: center;
+	
+
+	height: ~"@{winheight}px";
 	color: white;
 	.intro-text {
 		padding-top: 80px;
 		padding-bottom: 50px;
 		.intro-lead-in {
 			.serif-font;
-			font-weight: 700;
-			text-transform: uppercase;
-			font-size: 3em;
+			font-size: 2.75em;
 			line-height: 22px;
 			margin-bottom: 25px;
 			text-shadow: 0 1px 4px rgba(0,0,0,0.4);
@@ -208,13 +208,12 @@ header {
 
 @media(min-width:768px) {
 	header {
-		min-height: 600px;
+		height: ~"@{winheight}px";
 		.intro-text {
 			padding-top: 240px;
 			padding-bottom: 200px;
 			.intro-lead-in {
 				.serif-font;
-				font-weight: 700;
 				font-size: 2.75em;
 				line-height: 40px;
 				margin-bottom: 25px;
@@ -263,6 +262,18 @@ section {
 	}
 }
 
+#introduction {
+	background-image: 
+	    url('../img/cover/mooc-02.png');
+	    background-size: cover;
+	background-repeat: none;
+	min-height: 480px;
+	text-align: center;
+	p {
+		font-size: 1.25em;
+	}
+}
+
 // Services Section
 
 .service-heading {
@@ -288,12 +299,19 @@ section {
 	}
 
 	p {
-		font-size: 1.125em;
+		font-size: 1.25em;
 	}
 }
 
 #green {
 	min-height: 420px;
+}
+
+#invite {
+	text-align: center;
+	p {
+		font-size: 1.25em;
+	}
 }
 
 // Portfolio Section
@@ -637,7 +655,7 @@ section#contact {
 
 footer {
 	padding: 25px 0px 40px 0px;
-	// text-align: center;
+	text-align: center;
 	span.copyright {
 		// line-height: 40px;
 		.heading-font;
@@ -660,8 +678,8 @@ ul.social-buttons {
 		a {
 			display: block;
 			background-color: @gray-darkest;
-			height: 36px;
-			width: 36px;
+			height: 40px;
+			width: 40px;
 			border-radius: 100%;
 			font-size: 20px;
 			line-height: 40px;
@@ -680,11 +698,31 @@ ul.social-buttons {
 	}
 }
 
+.btn-yellow {
+	background: none;
+	border: 3px #FFDD00 solid;
+	font-size: 1.5em;
+	padding: 6px 18px;
+	font-weight: 700;
+	a {
+		color: @gray-darkest;
+	}
+}
+
+.btn-yellow:hover {
+	background-color: #FFDD00;
+	color: white;
+}
+
 .btn:focus,
 .btn:active,
 .btn.active,
 .btn:active:focus {
 	outline: none;
+}
+
+.survey{
+	text-align: center;
 }
 
 .portfolio-modal {
